@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Swanky and Moo Moo', cursive;
+  font-size: 3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  display: inline-block;
+  text-align: center;
+}
+
+.col.col-1 {
+  width: .35rem;
+}
+
+.col.col-2 {
+  width: 5.6rem;
+}
+
+.col.col-3 {
+  width: 4.25rem;
+}
+
+#messageNumber {
+  position: absolute;
+  animation: backToFront 2s ease-in forwards;
+}
+
+#messageText {
+  animation: frontToBack 2s ease-in forwards;
+}
+
+
+/* Animations */
+@keyframes backToFront {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-50%);
+    opacity: 100;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes frontToBack {
+  0% {
+    opacity: 100;
+  }
+  50% {
+    transform: translateY(50%);
+    opacity: 100;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+
+* {
+  border: solid 1px red;
+}
