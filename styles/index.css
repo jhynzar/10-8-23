@@ -2,10 +2,16 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Swanky and Moo Moo', cursive;
   font-size: 3rem;
+}
+
+.dedication {
+  margin-top: 5rem;
+  font-size: 1.5rem;
 }
 
 .container {
@@ -94,6 +100,22 @@ body {
   color: #ff2e63;
   margin-top: -1rem;
 }
+
+#messageFinal .heart::before {
+  content: 'Mj';
+  margin-left: -1.5rem;
+}
+
+#messageFinal .heart::after {
+  content: 'Bea';
+  margin-left: .2rem;
+}
+
+#messageFinal .heart::before, #messageFinal .heart::after {
+  position: absolute;
+  font-size: 1.5rem;
+  margin-top: .75rem;
+} 
 
 
 
