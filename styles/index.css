@@ -32,45 +32,109 @@ body {
   width: 4.25rem;
 }
 
-#messageNumber {
-  position: absolute;
-  animation: backToFront 2s ease-in forwards;
+#messageText {
+  position: relative;
 }
 
-#messageText {
-  animation: frontToBack 2s ease-in forwards;
+#messageText .col-1{
+  animation: fadeOut 1s ease-in 3s forwards;
 }
+
+#messageText .col-2{
+  animation: fadeOut 1s ease-in 5s forwards;
+}
+
+#messageText .col-3{
+  animation: fadeOut 1s ease-in 7s forwards;
+}
+
+#messageNumber{
+  position: absolute;
+  color: #ff2e63;
+}
+
+#messageNumber .col {
+  opacity: 0;
+}
+
+#messageNumber .col-1 {
+  animation: fadeIn 1s ease-in 4s forwards, fadeOut 1s ease-in-out 11.5s forwards;
+}
+
+#messageNumber .col-2{
+  animation: fadeIn 1s ease-in 6s forwards, fadeOut 1s ease-in-out 11.5s forwards;
+}
+
+#messageNumber .col-3{
+  animation: fadeIn 1s ease-in 8s forwards, moveToTarget 1.5s ease-in-out 12.5s forwards;
+}
+
+.underline-focus {
+  margin-top: 2.5rem;
+  position:absolute;
+  border: solid 1px #ff2e63;
+  width: 1%;
+  margin-left: -14rem;
+  opacity: 0;
+  animation: underline .8s ease-in 1.5s forwards;
+}
+
+#messageFinal {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3.75rem;
+  animation: fadeIn 1s ease-in-out 14.5s forwards;
+}
+
+#messageFinal .heart {
+  color: #ff2e63;
+  margin-top: -1rem;
+}
+
 
 
 /* Animations */
-@keyframes backToFront {
-  0% {
-    opacity: 0;
+@keyframes underline {
+  2% {
+    opacity: 100%;
   }
-  50% {
-    transform: translateY(-50%);
-    opacity: 100;
+  45% {
+    width: 3rem;
+  }
+  85% {
+    opacity: 100%;
   }
   100% {
-    transform: translateY(0);
+    transform: translateX(15rem);
+    opacity: 0;
+    width: 1rem;
   }
 }
 
-@keyframes frontToBack {
+@keyframes fadeIn {
   0% {
-    opacity: 100;
-  }
-  50% {
-    transform: translateY(50%);
-    opacity: 100;
+    opacity: 0%;
   }
   100% {
-    transform: translateY(0);
-    opacity: 0;
+    opacity: 100%;
   }
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
 
-* {
-  border: solid 1px red;
+@keyframes moveToTarget {
+  100% {
+    transform: translateX(-6rem);
+  }
 }
